@@ -1,0 +1,100 @@
+{
+	"name": "visualpython-sample2",
+	"description": "Visual Python example2 for VS Code",
+	"version": "0.0.1",
+	"publisher": "Visual Python",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/visualpython/visualpython.git"
+	},
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"activationEvents": [],
+	"main": "./extension.js",
+	"categories": [
+		"Data Science",
+		"Education",
+		"Machine Learning",
+		"Notebooks"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "visualpython.start",
+				"title": "Open Visual Python",
+				"category": "Visual Python"
+			},
+			{
+				"command": "visualpython.sendCmd",
+				"title": "Send some command",
+				"category": "Visual Python"
+			},
+			{
+				"command": "visualpython.refreshMenu",
+				"title": "Refresh menu",
+				"category": "Visual Python"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "vp-explorer",
+					"title": "Visual Python",
+					"icon": "icon_visualpython.svg"
+				}
+			]
+		},
+		"views": {
+			"vp-explorer": [
+				{
+					"id": "vp-menu",
+					"name": "Menu",
+					"type": "tree"
+				},
+				{
+					"id": "vp-history",
+					"name": "History",
+					"type": "tree"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "visualpython.refreshMenu",
+					"when": "view == vp-menu",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"files": [
+		"visualpython/**/*.{d.ts,css,eot,gif,html,py,jpg,js,js.map,json,png,svg,woff2,ttf,otf}"
+	],
+	"scripts": {
+		"test": "vscode-test"
+	},
+	"dependencies": {
+		"css-loader": "^6.7.1",
+		"jquery": "^3.6.3",
+		"jquery-ui": "^1.13.2",
+		"jquery-ui-bundle": "^1.12.1-migrate",
+		"json-loader": "^0.5.7",
+		"marked": "^8.0.0",
+		"module-alias": "^2.2.2",
+		"raw-loader": "^4.0.2",
+		"requirejs": "^2.3.6",
+		"text-loader": "^0.0.1"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.73.0",
+		"@vscode/test-cli": "0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"css-loader": "^6.7.1",
+		"requirejs": "^2.3.6",
+		"rimraf": "^5.0.1",
+		"source-map-loader": "^1.0.2",
+		"style-loader": "^3.3.1"
+	}
+}

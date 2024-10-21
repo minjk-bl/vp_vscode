@@ -1,0 +1,8 @@
+Type: Jupyter Notebook Extension
+Name: VisualPython
+Description: GUI-based Python code generator
+Link: README.md
+Icon: img/logo.png
+Main: visualpython.js
+Compatibility: 4.x, 5.x, 6.x
+Parameters:
